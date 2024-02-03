@@ -30,7 +30,7 @@ ESPPORT ?= /dev/ttyUSB0
 ESPBAUD ?= 115200
 
 # firmware tool arguments
-ESPTOOL_ARGS=-fs $(FLASH_SIZE)m -fm $(FLASH_MODE) -ff $(FLASH_SPEED)m
+ESPTOOL_ARGS=-fs $(FLASH_SIZE)MB -fm $(FLASH_MODE) -ff $(FLASH_SPEED)m
 
 
 # set this to 0 if you don't need floating point support in printf/scanf
