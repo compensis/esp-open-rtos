@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 #
 # A thin Python wrapper around addr2line, can monitor esp-open-rtos
 # output and uses gdb to convert any suitable looking hex numbers
@@ -74,13 +74,13 @@ def main():
         print("Reading from stdin...")
         port = sys.stdin
         # disable echo
-	try:
+        try:
             old_attr = termios.tcgetattr(sys.stdin.fileno())
-	    attr = termios.tcgetattr(sys.stdin.fileno())
-	    attr[3] = attr[3] & ~termios.ECHO
-	    termios.tcsetattr(sys.stdin.fileno(), termios.TCSADRAIN, attr)
-	except termios.error:
-	     pass
+            attr = termios.tcgetattr(sys.stdin.fileno())
+            attr[3] = attr[3] & ~termios.ECHO
+            termios.tcsetattr(sys.stdin.fileno(), termios.TCSADRAIN, attr)
+        except termios.error:
+             pass
 
     try:
         while True:
